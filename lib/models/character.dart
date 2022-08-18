@@ -1,7 +1,3 @@
-import 'dart:convert';
-
-import 'package:test_rick_morty/models/episode.dart';
-
 class Character {
   String name;
   Status status;
@@ -19,25 +15,25 @@ class Character {
 
   factory Character.fromJson(Map<String, dynamic> json) => Character(
         name: json["name"],
-        status: statusValues[json["status"]] ?? Status.UNKNOWN,
-        gender: genderValues[json["gender"]] ?? Gender.UNKNOWN,
+        status: statusValues[json["status"]] ?? Status.unknown,
+        gender: genderValues[json["gender"]] ?? Gender.unknown,
         image: json["image"],
         episode: List<String>.from(json["episode"].map((x) => x)),
       );
 }
 
-enum Gender { MALE, FEMALE, UNKNOWN }
+enum Gender { male, female, unknown }
 
 final genderValues = {
-  "Female": Gender.FEMALE,
-  "Male": Gender.MALE,
-  "unknown": Gender.UNKNOWN,
+  "Female": Gender.female,
+  "Male": Gender.male,
+  "unknown": Gender.unknown,
 };
 
-enum Status { ALIVE, UNKNOWN, DEAD }
+enum Status { alive, unknown, dead }
 
 final statusValues = {
-  "Alive": Status.ALIVE,
-  "Dead": Status.DEAD,
-  "unknown": Status.UNKNOWN,
+  "Alive": Status.alive,
+  "Dead": Status.dead,
+  "unknown": Status.unknown,
 };

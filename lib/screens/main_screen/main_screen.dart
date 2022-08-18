@@ -175,17 +175,17 @@ class _MainScreenState extends State<MainScreen> {
 
 Widget genderIcon(Gender gender) {
   switch (gender) {
-    case Gender.FEMALE:
+    case Gender.female:
       return SvgPicture.asset(
         "assets/icons/female.svg",
         color: AppColor.primaryGreen,
       );
-    case Gender.MALE:
+    case Gender.male:
       return SvgPicture.asset(
         "assets/icons/male.svg",
         color: AppColor.primaryGreen,
       );
-    case Gender.UNKNOWN:
+    case Gender.unknown:
       return SvgPicture.asset(
         "assets/icons/unknown.svg",
         color: AppColor.primaryGreen,
